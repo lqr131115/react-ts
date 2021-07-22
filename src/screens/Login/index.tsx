@@ -5,7 +5,7 @@ const BASE_URL = process.env.REACT_APP_DEV_URL
 
 export const Login = () => {
     const login  = (params:{username:string,password:string}) => {
-        fetch(`${BASE_URL}/login`,{
+        fetch(`${BASE_URL}/register`,{
             method:'POST',
             headers:{
                 "Content-Type":"application/json"
@@ -23,7 +23,7 @@ export const Login = () => {
         event.preventDefault()
         const username = (event.currentTarget.elements[0] as HTMLFormElement).value
         const password = (event.currentTarget.elements[1] as HTMLFormElement).value
-        login({username,password})        
+        login({username,password})      
     }
     return (
         <form onSubmit={handleSubmit}>
